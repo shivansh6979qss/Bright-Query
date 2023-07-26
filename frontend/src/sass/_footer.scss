@@ -1,0 +1,18 @@
+@import './extensions';
+
+footer {
+  @include flexing;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1a1a1b;
+  min-height: 9vh;
+  color: white;
+
+  .footer-wrapper {
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+}

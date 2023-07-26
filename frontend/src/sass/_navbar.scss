@@ -1,0 +1,74 @@
+@import './extensions';
+
+nav {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .logo {
+    width: 18%;
+    object-fit: cover;
+  }
+
+  .search {
+    @include flexing;
+    gap: 10px;
+
+    &-input-container {
+      position: relative;
+
+      &-close {
+        position: absolute;
+        right: 11px;
+        bottom: 15px;
+        background-color: white;
+        border: none;
+      }
+    }
+
+    input {
+      padding: 8px;
+      width: 35vw;
+      height: 7vh;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #e3e3e3;
+    }
+    &-btn {
+      position: relative;
+      text-align: center;
+      height: 7vh;
+      width: 26vh;
+      background-color: #3ac7ee;
+      border: none;
+
+      border-radius: 6px;
+
+      &-text {
+        font-weight: 500;
+        font-size: 1.6rem;
+        margin-right: 15px;
+        color: white;
+      }
+
+      &-icon {
+        position: absolute;
+        top: 11px;
+        right: 4rem;
+        color: white;
+      }
+    }
+  }
+
+  .navbar-icons {
+    @include flexing;
+    gap: 10px;
+  }
+}
+
+.left-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 6rem;
+}
