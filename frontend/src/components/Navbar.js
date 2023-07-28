@@ -1,29 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import 'sweetalert2/src/sweetalert2.scss';
+import "sweetalert2/src/sweetalert2.scss";
 
-import logo from '../images/logo.png';
+import logo from "../images/logo.png";
 
-import { MdSearch } from 'react-icons/md';
-import { MdClose } from 'react-icons/md';
-import { MdDensityMedium } from 'react-icons/md';
-import { FaUserCircle } from 'react-icons/fa';
+import { MdSearch } from "react-icons/md";
+import { MdClose } from "react-icons/md";
+import { MdDensityMedium } from "react-icons/md";
+import { FaUserCircle } from "react-icons/fa";
 
-import { setSearch } from '../redux/features/DataSearch';
-import { fetchdata } from '../redux/features/DataList';
+import { setSearch } from "../redux/features/DataSearch";
+import { fetchdata } from "../redux/features/DataList";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const [searchField, setSearchField] = useState('');
+  const [searchField, setSearchField] = useState("");
   const searchText = useSelector((state) => state.search);
 
   const searchHandler = () => {
-    dispatch(fetchdata('corpsjjjjjjjjjjjjj'));
+    dispatch(fetchdata(searchField));
   };
-  useEffect(() => {
-    dispatch(setSearch(searchField));
-  }, [searchField]);
+  // useEffect(() => {
+  //   dispatch(setSearch(searchField));
+  // }, [searchField]);
   return (
     <>
       <nav>
@@ -37,7 +37,7 @@ const Navbar = () => {
                 onChange={(e) => setSearchField(e.target.value)}
               />
               <button
-                onClick={() => setSearchField('')}
+                onClick={() => setSearchField("")}
                 className="search-input-container-close"
               >
                 <MdClose size={14} />

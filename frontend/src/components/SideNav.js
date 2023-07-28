@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { MdDensityMedium } from 'react-icons/md';
-import { MdOutlineFormatListBulleted } from 'react-icons/md';
-import { MdDragIndicator } from 'react-icons/md';
-import { MdOutlineFilePresent } from 'react-icons/md';
-import { MdCreditCard } from 'react-icons/md';
-import { AiOutlineArrowLeft } from 'react-icons/ai';
-import { AiOutlineArrowRight } from 'react-icons/ai';
+import { MdDensityMedium } from "react-icons/md";
+import { MdOutlineFormatListBulleted } from "react-icons/md";
+import { MdDragIndicator } from "react-icons/md";
+import { MdOutlineFilePresent } from "react-icons/md";
+import { MdCreditCard } from "react-icons/md";
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
-import DropDownFilter from './DropDownFilter';
-import { leftFilters } from '../data/filterData';
+import DropDownFilter from "./DropDownFilter";
+import { leftFilters } from "../data/filterData";
 
 const SideNav = () => {
   const [show, setShow] = useState(true);
@@ -52,6 +52,7 @@ const SideNav = () => {
             <div className="sidenav-links-text">Search Filter</div>
           </div>
           <div className="search-filter-items">
+            {console.log("ddddddddddd", leftFilters)}
             {leftFilters.map((x, index) => {
               //  console.log(x);
               return <DropDownFilter key={index} item={x} />;

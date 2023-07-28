@@ -1,41 +1,41 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
-export const fetchdata = createAsyncThunk('data/fetchdata', async (prop) => {
-  console.log(prop);
+export const fetchdata = createAsyncThunk("data/fetchdata", async (prop) => {
+  console.log("ddddddd", prop);
   try {
     const res = await axios.get(
-      'http://vespa-dev-36202923.us-west-2.elb.amazonaws.com/search',
+      "http://vespa-dev-36202923.us-west-2.elb.amazonaws.com/search",
       {
         params: {
           // filter: updatedFilters,
           // offset: currentPage,
           hits: 20,
-          ranking: 'bm25',
-          type: 'all',
+          ranking: "bm25",
+          type: "all",
           // query: search,
-          query: `corps`,
+          query: prop,
           // orderby: orderby,
           // isAsc: isAsc,
           // field: searchSelect,
         },
       }
     );
-    console.log('fbhdh', res);
+    console.log("fbhdh", res);
     return res.data;
   } catch (error) {
-    console.log('error', error);
+    console.log("error", error);
     return error;
   }
 });
 
 const dataSlice = createSlice({
-  name: 'dataList',
+  name: "dataList",
   initialState: {
-    loading: 'true',
+    loading: "true",
     data: [],
-    error: '',
+    error: "",
   },
   extraReducers: (builder) => {
     builder.addCase(fetchdata.pending, (state, action) => {
