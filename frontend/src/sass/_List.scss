@@ -1,4 +1,4 @@
-@import "./extensions";
+@import './extensions';
 
 .datalist {
   padding: 1.5rem 1rem;
@@ -13,11 +13,12 @@
 
   .org-details {
     @include flexing;
-    gap: 10px;
+    gap: 2rem;
     justify-content: flex-start;
-    align-items: baseline;
+    align-items: unset;
     padding: 1rem 1.5rem;
 
+    span,
     p,
     h4 {
       font-size: 1.6rem;
